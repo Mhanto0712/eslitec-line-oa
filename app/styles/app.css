@@ -1,0 +1,257 @@
+@import './tailwind.css';
+@font-face {
+  font-family: "Line Seed TW";
+  src: url("/fonts/LINESeedTW_OTF_Th.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Line Seed TW";
+  src: url("/fonts/LINESeedTW_OTF_Rg.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Line Seed TW";
+  src: url("/fonts/LINESeedTW_OTF_Bd.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Line Seed TW";
+  src: url("/fonts/LINESeedTW_OTF_Eb.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@theme {
+  --font-line: "Line Seed TW", sans-serif;
+  --primary-color: #06c755;
+  --secondary-color: #4cc764;
+  --third-color: #9de693;
+  --neutral-color: #949494;
+  --subtle-color: #efefef;
+}
+html {
+  @apply box-border w-full h-full bg-white font-[family-name:var(--font-line)];
+}
+
+body {
+  @apply w-full h-full;
+}
+body .login__message {
+  @apply absolute bottom-full right-0 pb-4 text-2xl text-[var(--neutral-color)];
+}
+body .login__message:hover {
+  @apply text-[var(--primary-color)] cursor-pointer;
+}
+body .login__page {
+  @apply flex items-center justify-center w-full h-full;
+}
+body .login__block {
+  @apply relative flex flex-col items-center justify-center gap-4 w-1/3 aspect-9/10 p-8 border rounded-2xl border-[var(--neutral-color)];
+}
+body .login__title__block {
+  @apply flex items-center justify-center w-full h-1/6 font-bold text-4xl text-[var(--primary-color)];
+}
+body .login__form {
+  @apply flex flex-col items-center justify-center gap-10 w-full h-5/6;
+}
+body .login__form-box {
+  @apply relative w-full;
+}
+body .login__label {
+  @apply hidden absolute top-0 left-0 -translate-y-full text-[var(--primary-color)];
+}
+body .login__input {
+  @apply w-full p-1 text-2xl border-b-2 border-[var(--neutral-color)];
+}
+body .login__input:focus {
+  @apply outline-none border-[var(--primary-color)];
+}
+body .login__send {
+  @apply w-full p-4 text-2xl text-white bg-[var(--neutral-color)] rounded-sm pointer-events-none;
+}
+body .login__send.login__send--active {
+  @apply bg-[var(--primary-color)] pointer-events-auto;
+}
+body .login__send.login__send--active:hover {
+  @apply bg-[var(--secondary-color)] cursor-pointer;
+}
+body .login__send.login__send--active:active {
+  @apply bg-[var(--primary-color)] cursor-pointer;
+}
+body .message__page {
+  @apply flex items-center justify-center w-full h-full;
+}
+body .message__home:hover {
+  @apply cursor-pointer;
+}
+body .message__home-text {
+  @apply font-bold text-4xl text-[var(--primary-color)];
+}
+body .message__user-block {
+  @apply flex flex-col items-center justify-center w-1/3 h-full;
+}
+body .message__user-topbar {
+  @apply flex items-center justify-between w-full h-1/10 p-4 border-b border-[var(--neutral-color)];
+}
+body .message__user-search {
+  @apply w-1/2 p-2 text-2xl border border-[var(--neutral-color)] rounded-sm;
+}
+body .message__user-data {
+  @apply w-full h-9/10;
+}
+body .message__user-box {
+  @apply flex items-center justify-start gap-4 p-4 bg-white;
+}
+body .message__user-box:hover {
+  @apply bg-[var(--subtle-color)] cursor-pointer;
+}
+body .message__user-thumbnail {
+  @apply p-4 bg-black rounded-full;
+}
+body .message__user-icon {
+  @apply w-9 h-auto aspect-square text-white;
+}
+body .message__user-name {
+  @apply text-2xl;
+}
+body .message__user-chat {
+  @apply text-xl text-[var(--neutral-color)];
+}
+body .message__chat-block {
+  @apply w-2/3 h-full border-l border-[var(--neutral-color)];
+}
+body .message__chat-topbar {
+  @apply relative flex items-center justify-between w-full h-1/10 p-4 border-b border-[var(--neutral-color)];
+}
+body .message__chat-profile {
+  @apply flex items-center justify-center gap-4;
+}
+body .message__chat-thumbnail {
+  @apply p-4 bg-black rounded-full;
+}
+body .message__chat-icon {
+  @apply w-9 h-auto aspect-square text-white;
+}
+body .message__chat-name {
+  @apply text-2xl;
+}
+body .message__chat-search {
+  @apply w-1/2 h-full p-2 text-2xl border border-[var(--neutral-color)] rounded-sm;
+}
+body .message__chat-data {
+  @apply flex flex-col items-center justify-start gap-4 w-full h-13/20 p-4 overflow-y-scroll scroll-smooth;
+}
+body .message__chat-input {
+  @apply w-full h-7/40 p-4 text-2xl border-t border-[var(--neutral-color)];
+}
+body .message__chat-send {
+  @apply flex items-center justify-end w-full h-3/40 px-4 py-2;
+}
+body .message__search-btn {
+  @apply flex items-center justify-center gap-2 px-4 py-2 border border-[var(--neutral-color)] rounded-sm;
+}
+body .message__search-btn:hover {
+  @apply cursor-pointer bg-[var(--subtle-color)];
+}
+body .message__search-icon {
+  @apply w-5 h-auto aspect-square;
+}
+body .message__search-text {
+  @apply text-xl;
+}
+body .message__search-box {
+  @apply absolute top-full left-0 flex items-center justify-center gap-2 w-full p-4 text-xl bg-[var(--subtle-color)];
+}
+body .message__search-input {
+  @apply w-full p-2 bg-white border border-[var(--neutral-color)];
+}
+body .message__search-close {
+  @apply w-8 h-auto aspect-square text-[var(--neutral-color)];
+}
+body .message__search-close:hover {
+  @apply text-black cursor-pointer;
+}
+body .message__search-content {
+  @apply absolute top-full left-0 flex flex-col items-center justify-start w-full max-h-3/1 text-xl border-b border-[var(--neutral-color)] overflow-y-scroll;
+}
+body .message__search-row {
+  @apply flex items-center justify-center gap-4 w-full p-2 bg-white;
+}
+body .message__search-row:hover {
+  @apply bg-[var(--subtle-color)] cursor-pointer;
+}
+body .message__search-thumbnail {
+  @apply p-4 bg-black rounded-full;
+}
+body .message__search-thumbnail--system {
+  @apply bg-white border border-[var(--neutral-color)];
+}
+body .message__search-photo {
+  @apply w-7 h-auto aspect-square text-white;
+}
+body .message__search-photo--system {
+  @apply text-black;
+}
+body .message__search-info {
+  @apply w-full;
+}
+body .message__search-name {
+  @apply text-2xl;
+}
+body .message__search-chat {
+  @apply text-xl text-[var(--neutral-color)];
+}
+body .message__data-box {
+  @apply flex items-center w-full;
+}
+body .message__data-box--user {
+  @apply justify-start;
+}
+body .message__data-box--system {
+  @apply justify-end;
+}
+body .message__data-user {
+  @apply flex items-start justify-start gap-4 w-4/5;
+}
+body .message__data-system {
+  @apply flex items-center justify-end gap-4 w-4/5;
+}
+body .message__data-thumbnail {
+  @apply p-4 bg-black rounded-full;
+}
+body .message__data-icon {
+  @apply w-7 h-auto aspect-square text-white;
+}
+body .message__data-chat {
+  @apply text-2xl;
+}
+body .message__data-chat--user {
+  @apply px-4 py-2 bg-[var(--subtle-color)] rounded-3xl;
+}
+body .message__data-chat--system {
+  @apply px-4 py-2 bg-[var(--third-color)] rounded-3xl;
+}
+body .message__send-btn {
+  @apply flex items-center justify-center gap-2 px-4 py-2 bg-[var(--primary-color)] rounded-sm text-white pointer-events-auto;
+}
+body .message__send-btn--unwork {
+  @apply bg-[var(--neutral-color)] pointer-events-none;
+}
+body .message__send-btn:hover {
+  @apply cursor-pointer bg-[var(--secondary-color)];
+}
+body .message__send-btn:active {
+  @apply cursor-pointer bg-[var(--primary-color)];
+}
+body .message__send-icon {
+  @apply w-5 h-auto aspect-square;
+}
+body .message__send-text {
+  @apply text-xl;
+}/*# sourceMappingURL=app.css.map */

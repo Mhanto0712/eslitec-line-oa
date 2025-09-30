@@ -1,0 +1,267 @@
+@import './tailwind.css';
+
+$line-seed-tw: (
+  Th: 100,
+  Rg: 400,
+  Bd: 700,
+  Eb: 800,
+);
+
+@each $name, $weight in $line-seed-tw {
+  @font-face {
+    font-family: 'Line Seed TW';
+    src: url('/fonts/LINESeedTW_OTF_#{$name}.woff2') format('woff2');
+    font-weight: $weight;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+@theme {
+  // font
+  --font-line: 'Line Seed TW', sans-serif;
+  // color
+  --primary-color: #06c755;
+  --secondary-color: #4cc764;
+  --third-color: #9de693;
+  --neutral-color: #949494;
+  --subtle-color: #efefef;
+}
+
+html {
+  @apply box-border w-full h-full bg-white font-[family-name:var(--font-line)];
+}
+body {
+  @apply w-full h-full;
+  .login {
+    &__message {
+      @apply absolute bottom-full right-0 pb-4 text-2xl text-[var(--neutral-color)];
+      &:hover {
+        @apply text-[var(--primary-color)] cursor-pointer;
+      }
+    }
+    &__page {
+      @apply flex items-center justify-center w-full h-full;
+    }
+    &__block {
+      @apply relative flex flex-col items-center justify-center gap-4 w-1/3 aspect-9/10 p-8 border rounded-2xl border-[var(--neutral-color)];
+    }
+    &__title {
+      &__block {
+        @apply flex items-center justify-center w-full h-1/6 font-bold text-4xl text-[var(--primary-color)];
+      }
+    }
+    &__form {
+      @apply flex flex-col items-center justify-center gap-10 w-full h-5/6;
+      &-box {
+        @apply relative w-full;
+      }
+    }
+    &__label {
+      @apply hidden absolute top-0 left-0 -translate-y-full text-[var(--primary-color)];
+    }
+    &__input {
+      @apply w-full p-1 text-2xl border-b-2 border-[var(--neutral-color)];
+      &:focus {
+        @apply outline-none border-[var(--primary-color)];
+      }
+    }
+    &__send {
+      @apply w-full p-4 text-2xl text-white bg-[var(--neutral-color)] rounded-sm pointer-events-none;
+      &.login__send--active {
+        @apply bg-[var(--primary-color)] pointer-events-auto;
+        &:hover {
+          @apply bg-[var(--secondary-color)] cursor-pointer;
+        }
+        &:active {
+          @apply bg-[var(--primary-color)] cursor-pointer;
+        }
+      }
+    }
+  }
+  .message {
+    &__page {
+      @apply flex items-center justify-center w-full h-full;
+    }
+    &__home {
+      &:hover {
+        @apply cursor-pointer;
+      }
+      &-text {
+        @apply font-bold text-4xl text-[var(--primary-color)];
+      }
+    }
+    &__user {
+      &-block {
+        @apply flex flex-col items-center justify-center w-1/3 h-full;
+      }
+      &-topbar {
+        @apply flex items-center justify-between w-full h-1/10 p-4 border-b border-[var(--neutral-color)];
+      }
+      &-search {
+        @apply w-1/2 p-2 text-2xl border border-[var(--neutral-color)] rounded-sm;
+      }
+      &-data {
+        @apply w-full h-9/10;
+      }
+      &-box {
+        @apply flex items-center justify-start gap-4 p-4 bg-white;
+        &:hover {
+          @apply bg-[var(--subtle-color)] cursor-pointer;
+        }
+      }
+      &-thumbnail {
+        @apply p-4 bg-black rounded-full;
+      }
+      &-icon {
+        @apply w-9 h-auto aspect-square text-white;
+      }
+      &-name {
+        @apply text-2xl;
+      }
+      &-chat {
+        @apply text-xl text-[var(--neutral-color)];
+      }
+    }
+    &__chat {
+      &-block {
+        @apply w-2/3 h-full border-l border-[var(--neutral-color)];
+      }
+      &-topbar {
+        @apply relative flex items-center justify-between w-full h-1/10 p-4 border-b border-[var(--neutral-color)];
+      }
+      &-profile {
+        @apply flex items-center justify-center gap-4;
+      }
+      &-thumbnail {
+        @apply p-4 bg-black rounded-full;
+      }
+      &-icon {
+        @apply w-9 h-auto aspect-square text-white;
+      }
+      &-name {
+        @apply text-2xl;
+      }
+      &-search {
+        @apply w-1/2 h-full p-2 text-2xl border border-[var(--neutral-color)] rounded-sm;
+      }
+      &-data {
+        @apply flex flex-col items-center justify-start gap-4 w-full h-13/20 p-4 overflow-y-scroll  scroll-smooth;
+      }
+      &-input {
+        @apply w-full h-7/40 p-4 text-2xl border-t border-[var(--neutral-color)];
+      }
+      &-send {
+        @apply flex items-center justify-end w-full h-3/40 px-4 py-2;
+      }
+    }
+    &__search {
+      &-btn {
+        @apply flex items-center justify-center gap-2 px-4 py-2 border border-[var(--neutral-color)] rounded-sm;
+        &:hover {
+          @apply cursor-pointer bg-[var(--subtle-color)];
+        }
+      }
+      &-icon {
+        @apply w-5 h-auto aspect-square;
+      }
+      &-text {
+        @apply text-xl;
+      }
+      &-box {
+        @apply absolute top-full left-0 flex items-center justify-center gap-2 w-full p-4 text-xl bg-[var(--subtle-color)];
+      }
+      &-input {
+        @apply w-full p-2 bg-white border border-[var(--neutral-color)];
+      }
+      &-close {
+        @apply w-8 h-auto aspect-square text-[var(--neutral-color)];
+        &:hover {
+          @apply text-black cursor-pointer;
+        }
+      }
+      &-content {
+        @apply absolute top-full left-0 flex flex-col items-center justify-start w-full max-h-3/1 text-xl border-b border-[var(--neutral-color)] overflow-y-scroll;
+      }
+      &-row {
+        @apply flex items-center justify-center gap-4 w-full p-2 bg-white;
+        &:hover {
+          @apply bg-[var(--subtle-color)] cursor-pointer;
+        }
+      }
+      &-thumbnail {
+        @apply p-4 bg-black rounded-full;
+        &--system {
+          @apply bg-white border border-[var(--neutral-color)];
+        }
+      }
+      &-photo {
+        @apply w-7 h-auto aspect-square text-white;
+        &--system {
+          @apply text-black;
+        }
+      }
+      &-info {
+        @apply w-full;
+      }
+      &-name {
+        @apply text-2xl;
+      }
+      &-chat {
+        @apply text-xl text-[var(--neutral-color)];
+      }
+    }
+    &__data {
+      &-box {
+        @apply flex items-center w-full;
+        &--user {
+          @apply justify-start;
+        }
+        &--system {
+          @apply justify-end;
+        }
+      }
+      &-user {
+        @apply flex items-start justify-start gap-4 w-4/5;
+      }
+      &-system {
+        @apply flex items-center justify-end gap-4 w-4/5;
+      }
+      &-thumbnail {
+        @apply p-4 bg-black rounded-full;
+      }
+      &-icon {
+        @apply w-7 h-auto aspect-square text-white;
+      }
+      &-chat {
+        @apply text-2xl;
+        &--user {
+          @apply px-4 py-2 bg-[var(--subtle-color)] rounded-3xl;
+        }
+        &--system {
+          @apply px-4 py-2 bg-[var(--third-color)] rounded-3xl;
+        }
+      }
+    }
+    &__send {
+      &-btn {
+        @apply flex items-center justify-center gap-2 px-4 py-2 bg-[var(--primary-color)]  rounded-sm text-white pointer-events-auto;
+        &--unwork {
+          @apply bg-[var(--neutral-color)] pointer-events-none;
+        }
+        &:hover {
+          @apply cursor-pointer bg-[var(--secondary-color)];
+        }
+        &:active {
+          @apply cursor-pointer bg-[var(--primary-color)];
+        }
+      }
+      &-icon {
+        @apply w-5 h-auto aspect-square;
+      }
+      &-text {
+        @apply text-xl;
+      }
+    }
+  }
+}
